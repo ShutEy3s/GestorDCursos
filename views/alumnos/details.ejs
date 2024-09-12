@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Detalles del Alumno</title>
+</head>
+<body>
+  <h1>Detalles del Alumno</h1>
+  
+  <!-- Mostrar información del alumno -->
+  <p><strong>Nombre:</strong> <%= alumno.nombre %></p>
+  <p><strong>Edad:</strong> <%= alumno.edad %></p>
+  <p><strong>Correo:</strong> <%= alumno.correo %></p>
+
+  <!-- Mostrar cursos en los que está inscrito el alumno -->
+  <h2>Cursos Inscritos:</h2>
+  <ul>
+    <% if (alumno.cursos.length > 0) { %>
+      <% alumno.cursos.forEach(curso => { %>
+        <li><%= curso.nombre %></li>
+      <% }); %>
+    <% } else { %>
+      <li>El alumno no está inscrito en ningún curso.</li>
+    <% } %>
+  </ul>
+
+  <!-- Enlace para regresar a la lista de alumnos -->
+  <a href="/alumnos">Volver a la lista de alumnos</a>
+</body>
+</html>

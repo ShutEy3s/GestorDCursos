@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agregar Alumno</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Agregar Nuevo Alumno</h1>
+  <form action="/alumnos/add" method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" name="edad" required>
+    <label for="correo">Correo:</label>
+    <input type="email" id="correo" name="correo" required>
+    <button type="submit">Agregar</button>
+  </form>
+  <a href="/alumnos">Volver a la lista</a>
+</body>
+</html>

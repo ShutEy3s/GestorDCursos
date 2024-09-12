@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profesores</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Lista de Profesores</h1>
+  <ul>
+    <% profesores.forEach(profesor => { %>
+      <li><%= profesor.nombre %> - <%= profesor.email %></li>
+    <% }); %>
+  </ul>
+  <form action="/profesores/add" method="POST">
+    <h2>Agregar Profesor</h2>
+    <label>Nombre: <input type="text" name="nombre" required></label>
+    <label>Email: <input type="email" name="email" required></label>
+    <button type="submit">Agregar</button>
+  </form>
+  <a href="/">Volver a la página principal</a>
+</body>
+</html>

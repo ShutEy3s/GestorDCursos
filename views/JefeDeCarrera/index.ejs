@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jefe de Carrera</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Lista de Jefes de Carrera</h1>
+  <ul>
+    <% jefes.forEach(jefe => { %>
+      <li><%= jefe.nombre %> - <%= jefe.email %></li>
+    <% }); %>
+  </ul>
+  <form action="/jefeDeCarrera/add" method="POST">
+    <h2>Agregar Jefe de Carrera</h2>
+    <label>Nombre: <input type="text" name="nombre" required></label>
+    <label>Email: <input type="email" name="email" required></label>
+    <label>Contraseña: <input type="password" name="password" required></label>
+    <button type="submit">Agregar</button>
+  </form>
+  <a href="/">Volver a la página principal</a>
+</body>
+</html>

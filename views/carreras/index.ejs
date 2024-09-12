@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carreras</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Lista de Carreras</h1>
+  <ul>
+    <% carreras.forEach(carrera => { %>
+      <li>
+        <strong><%= carrera.nombre %></strong>
+        <ul>
+          <li>Asignaturas:
+            <ul>
+              <% carrera.asignaturas.forEach(asignatura => { %>
+                <li><%= asignatura.nombre %></li>
+              <% }); %>
+            </ul>
+          </li>
+          <li>Profesores:
+            <ul>
+              <% carrera.profesores.forEach(profesor => { %>
+                <li><%= profesor.nombre %></li>
+              <% }); %>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    <% }); %>
+  </ul>
+<!-- views/carreras/index.ejs -->
+<form action="/carreras/add" method="POST">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    
+    <label for="asignaturas">Asignaturas (IDs separados por comas):</label>
+    <input type="text" id="asignaturas" name="asignaturas" required>
+    
+    <label for="profesores">Profesores (IDs separados por comas):</label>
+    <input type="text" id="profesores" name="profesores" required>
+  
+    <button type="submit">Agregar Carrera</button>
+  </form>
+  
+  <a href="/">Volver a la página principal</a>
+</body>
+</html>

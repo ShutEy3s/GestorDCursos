@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Cursos</title>
+</head>
+<body>
+  <h1>Lista de Cursos</h1>
+  <ul>
+    <% cursos.forEach(curso => { %>
+      <li>
+        <h2><%= curso.nombre %></h2>
+        <ul>
+          <li><strong>Alumnos inscritos:</strong></li>
+          <ul>
+            <% if (curso.alumnos.length > 0) { %>
+              <% curso.alumnos.forEach(alumno => { %>
+                <li><%= alumno.nombre %></li> <!-- Asegúrate de que `nombre` es un campo válido en el modelo `Alumno` -->
+              <% }); %>
+            <% } else { %>
+              <li>No hay alumnos inscritos.</li>
+            <% } %>
+          </ul>
+        </ul>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

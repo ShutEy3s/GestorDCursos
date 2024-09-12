@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asignaturas</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Lista de Asignaturas</h1>
+  <ul>
+    <% asignaturas.forEach(asignatura => { %>
+      <li><%= asignatura.nombre %></li>
+    <% }); %>
+  </ul>
+  <form action="/asignaturas/add" method="POST">
+    <h2>Agregar Asignatura</h2>
+    <label>Nombre: <input type="text" name="nombre" required></label>
+    <button type="submit">Agregar</button>
+  </form>
+  <a href="/">Volver a la página principal</a>
+</body>
+</html>
